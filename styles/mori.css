@@ -1,0 +1,108 @@
+/* 基础设置 */
+:root {
+  --bg: #0b1220;
+  --card: #0f1b33;
+  --text: #e6f0ff;
+  --muted: #8aa0bf;
+  --primary: #6ac8ff; /* jelly */
+  --primary-2: #b5e5ff;
+  --accent: #a789ff; /* deep sea */
+  --mint: #7be0c3;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0; color: var(--text); background: radial-gradient(1200px 800px at 80% -10%, rgba(106,200,255,.15), transparent 60%),
+    radial-gradient(900px 600px at 10% 10%, rgba(167,137,255,.15), transparent 60%),
+    linear-gradient(180deg, #0b1220, #0b1220 60%);
+  font-family: 'Noto Sans SC', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Segoe UI Emoji';
+}
+
+.site-header {
+  position: sticky; top: 0; z-index: 50; backdrop-filter: saturate(140%) blur(8px);
+  background: rgba(15,27,51,.6); border-bottom: 1px solid rgba(255,255,255,.06);
+  display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 20px;
+}
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand h1 { margin: 0; font-family: 'Baloo 2', cursive; letter-spacing: .5px; }
+.tag { margin: 2px 0 0; color: var(--muted); font-size: 12px; }
+.logo-jelly { width: 34px; height: 34px; border-radius: 50% 50% 40% 40%/60% 60% 40% 40%;
+  background: radial-gradient(60% 60% at 50% 30%, var(--primary-2), var(--primary)); box-shadow: inset 0 -6px 18px rgba(255,255,255,.25), var(--shadow);
+  position: relative; overflow: hidden; }
+.logo-jelly::after { content:""; position:absolute; inset:auto 6px 6px auto; width:10px; height:10px; background:rgba(255,255,255,.6); border-radius:50%; }
+/* New neutral logo (same visual as before) */
+.logo-brand { width: 34px; height: 34px; border-radius: 10px; background: linear-gradient(140deg, var(--primary), var(--primary-2));
+  box-shadow: inset 0 -6px 18px rgba(255,255,255,.25), var(--shadow); position: relative; overflow: hidden; }
+.logo-brand::after { content:""; position:absolute; inset:auto 6px 6px auto; width:10px; height:10px; background:rgba(255,255,255,.6); border-radius:50%; }
+.links a { color: var(--text); text-decoration: none; opacity: .85; margin-left: 14px; }
+.links a:hover { opacity: 1; }
+
+/* 全站链接去下划线 */
+a { text-decoration: none; }
+a:hover { text-decoration: none; }
+/* 非导航链接的颜色（正文/页脚） */
+.brand-text a, .panel-about a, .site-footer a { color: var(--primary-2); }
+.brand-text a:hover, .panel-about a:hover, .site-footer a:hover { color: #fff; opacity: .95; }
+
+.container { max-width: 1100px; margin: 30px auto; padding: 0 18px; }
+.panel { background: rgba(15,27,51,.6); border: 1px solid rgba(255,255,255,.06); border-radius: 16px; padding: 18px; box-shadow: var(--shadow); margin-bottom: 22px; }
+.panel h2 { margin-top: 0; font-family: 'Baloo 2', cursive; }
+
+/* 预览舞台 */
+.preview-grid { display: grid; grid-template-columns: 1fr 360px; gap: 18px; align-items: start; }
+.preview-left { min-width: 0; }
+.badge-stage { display: grid; place-items: center; min-height: 340px; padding: 20px; background: linear-gradient(180deg, rgba(106,200,255,.08), rgba(167,137,255,.08)); border-radius: 14px; border: 1px dashed rgba(255,255,255,.14); }
+.info-card { background: rgba(15,27,51,.6); border: 1px solid rgba(255,255,255,.08); border-radius: 14px; padding: 16px; box-shadow: var(--shadow); }
+.info-card h3 { margin: 6px 0 10px; font-family: 'Baloo 2', cursive; }
+.info-card p { color: var(--text); line-height: 1.7; }
+
+@media (max-width: 900px) {
+  .preview-grid { grid-template-columns: 1fr; }
+}
+
+.badge { position: relative; width: 280px; height: 280px; display: grid; place-items: center; filter: drop-shadow(0 8px 18px rgba(0,0,0,.5)); }
+.badge-round { border-radius: 50%; overflow: hidden; }
+.badge-squircle { border-radius: 26px; overflow: hidden; }
+.badge-medal { clip-path: path('M140 0 C 220 0 280 60 280 140 C 280 220 220 280 140 280 C 60 280 0 220 0 140 C 0 60 60 0 140 0 Z'); border-radius: 20px; overflow: hidden; }
+
+.badge-bg { position: absolute; inset: 0; background: linear-gradient(140deg, var(--primary), var(--primary-2)); }
+.brand-gradient { background: linear-gradient(140deg, var(--primary), var(--primary-2)); }
+.brand-gradient.plum { background: linear-gradient(140deg, #7a5dff, #c2b2ff); }
+.brand-gradient.mint { background: linear-gradient(140deg, #4fcab0, #a9eddc); }
+
+.badge img { max-width: 85%; max-height: 85%; object-fit: contain; transform-origin: center; transition: transform .2s ease; }
+
+.ribbon { position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); background: rgba(11,18,32,.6);
+  border: 1px solid rgba(255,255,255,.24); color: var(--text); padding: 6px 12px; border-radius: 999px; backdrop-filter: blur(6px) saturate(140%);
+  font-weight: 600; font-size: 14px; letter-spacing: .5px; box-shadow: 0 6px 14px rgba(0,0,0,.35);
+}
+.ribbon::before, .ribbon::after { content:""; position: absolute; top: 50%; width: 14px; height: 2px; background: rgba(255,255,255,.35); }
+.ribbon::before { left: -16px; }
+.ribbon::after { right: -16px; }
+
+/* 气泡装饰已移除以保持中性展示 */
+
+/* 控制区 */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+.field { display: grid; gap: 6px; }
+.field label { color: var(--muted); font-size: 14px; }
+input[type="text"], select, input[type="file"] { background: #0f1b33; color: var(--text); border: 1px solid rgba(255,255,255,.14); border-radius: 10px; padding: 10px 12px; }
+input[type="range"] { width: 100%; }
+
+.actions { margin-top: 12px; display: flex; gap: 10px; }
+.btn { background: #0f1b33; color: var(--text); border: 1px solid rgba(255,255,255,.18); padding: 10px 14px; border-radius: 10px; cursor: pointer; }
+.btn.primary { background: linear-gradient(90deg, var(--primary), var(--accent)); border: none; }
+.btn:hover { opacity: .95; }
+
+.site-footer { text-align: center; color: var(--muted); padding: 26px 0 40px; }
+
+/* 字体控制 */
+.font-baloo { font-family: 'Baloo 2', cursive; }
+.font-noto { font-family: 'Noto Sans SC', system-ui; }
+
+/* 展示画廊 */
+.panel-gallery .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+.card { background: rgba(15,27,51,.55); border: 1px solid rgba(255,255,255,.07); border-radius: 16px; padding: 16px; box-shadow: var(--shadow); }
+.card .badge { margin: 6px auto 10px; width: 240px; height: 240px; }
+.card figcaption { text-align: center; color: var(--muted); font-size: 13px; margin-top: 6px; }

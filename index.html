@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>梦璃 MoRi | 吧唧展示页</title>
+  <meta name="description" content="梦璃 MoRi 吧唧（徽章）展示页，呈现多种框架与配色的成品效果。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&family=Noto+Sans+SC:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/mori.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <div class="logo-brand" aria-hidden="true"></div>
+      <div class="brand-text">
+        <h1><a href="https://space.bilibili.com/3546948034365462" target="_blank" rel="noopener">梦璃 MoRi</a></h1>
+        <p class="tag">吧唧样式展示</p>
+      </div>
+    </div>
+    <nav class="links">
+      <a href="#preview">预览</a>
+      <a href="#gallery">风格一览</a>
+      <a href="#about">关于</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="preview" class="panel panel-preview">
+      <h2>吧唧展示</h2>
+      <div class="preview-grid">
+        <div class="preview-left">
+          <div id="badgeStage" class="badge-stage" role="img" aria-label="吧唧预览画布">
+            <div id="badge" class="badge badge-round">
+              <div class="badge-bg brand-gradient"></div>
+              <img id="charaImg" src="assets/mori.png" onerror="this.onerror=null;this.src='assets/mori-placeholder.svg'" alt="角色图片" />
+              <div class="ribbon" id="ribbon">
+                <span id="ribbonText">MoRi</span>
+              </div>
+            </div>
+          </div>
+          <p class="hint">提示：默认尝试读取 <code>assets/mori.png</code>；如不存在，将显示占位图。</p>
+        </div>
+        <aside class="info-card">
+          <h3>梦璃 MoRi 的公告</h3>
+          <p>
+            暂无固定直播时间，有缘请蹲蹲。<br/>
+            二创请艾特，梦璃会去捧场！<br/>
+            私皮水母，请勿将形象拿去喂 AI，感激不尽。<br/>
+            门牌号：1057085724（需备注 ID）
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="gallery" class="panel panel-gallery">
+      <h2>风格一览</h2>
+      <div class="gallery">
+        <figure class="card">
+          <div class="badge badge-round">
+            <div class="badge-bg brand-gradient"></div>
+            <img src="assets/mori.png" onerror="this.onerror=null;this.src='assets/mori-placeholder.svg'" alt="梦璃 MoRi" />
+            <div class="ribbon font-baloo"><span>MoRi · 天空蓝</span></div>
+          </div>
+          <figcaption>圆形 · 天空蓝</figcaption>
+        </figure>
+
+        <figure class="card">
+          <div class="badge badge-squircle">
+            <div class="badge-bg brand-gradient plum"></div>
+            <img src="assets/mori.png" onerror="this.onerror=null;this.src='assets/mori-placeholder.svg'" alt="梦璃 MoRi" />
+            <div class="ribbon font-noto"><span>暮紫</span></div>
+          </div>
+          <figcaption>圆角方 · 暮紫</figcaption>
+        </figure>
+
+        <figure class="card">
+          <div class="badge badge-medal">
+            <div class="badge-bg brand-gradient mint"></div>
+            <img src="assets/mori.png" onerror="this.onerror=null;this.src='assets/mori-placeholder.svg'" alt="梦璃 MoRi" />
+            <div class="ribbon font-baloo"><span>薄荷绿</span></div>
+          </div>
+          <figcaption>勋章 · 薄荷绿</figcaption>
+        </figure>
+
+        <figure class="card">
+          <div class="badge badge-round">
+            <div class="badge-bg brand-gradient"></div>
+            <img src="assets/mori.png" onerror="this.onerror=null;this.src='assets/mori-placeholder.svg'" alt="梦璃 MoRi" />
+            <!-- 无丝带款 -->
+          </div>
+          <figcaption>圆形 · 纯净无丝带</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 生成器区域已移除：本页仅用于展示吧唧成品样式 -->
+
+    <section id="about" class="panel panel-about">
+      <h2>关于 梦璃 MoRi</h2>
+      <p>【私皮新v】是电子水母梦璃！初来乍到请大家多多关照~主营杂谈（偶尔歌切 + 游戏回）。欢迎二创~门牌号：1057085724（备注 ID）。</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Made with ❤ by <a href="https://hiyori.webn.cc" target="_blank" rel="noopener">白月日和</a> · For <a href="https://space.bilibili.com/3546948034365462" target="_blank" rel="noopener">梦璃 MoRi</a></p>
+  </footer>
+
+</body>
+</html>
